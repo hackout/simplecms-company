@@ -1,0 +1,37 @@
+{
+    "name": "simplecms/company",
+    "description": "公司信息附带单独账号,适用企业类型",
+    "keywords": [
+        "laravel",
+        "company",
+        "simplecms"
+    ],
+    "version": "1.0.1",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SimpleCMS\\Company\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hackout",
+            "email": "hackout@vip.qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "laravel/framework": ">=11.0",
+        "simplecms/framework": ">=1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SimpleCMS\\Company\\CompanyServiceProvider"
+            ],
+            "aliases": {
+                "CompanyAuthenticatable": "SimpleCMS\\Company\\Facades\\CompanyAuthenticatable"
+            }
+        }
+    }
+}
