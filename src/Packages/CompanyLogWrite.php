@@ -1,7 +1,7 @@
 <?php
 namespace SimpleCMS\Company\Packages;
 
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use SimpleCMS\Company\Models\CompanyLog;
 use SimpleCMS\Framework\Attributes\ApiName;
 use SimpleCMS\Company\Models\CompanyAccount;

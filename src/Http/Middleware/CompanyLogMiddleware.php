@@ -13,11 +13,10 @@ class CompanyLogMiddleware
      *
      * @param  Request  $request
      * @param  Closure  $next
-     * @param  string $role
      * @return mixed
      *
      */
-    public function handle(Request $request, Closure $next, string $role)
+    public function handle(Request $request, Closure $next)
     {
         Event::dispatch('simplecms.plugin.company.company_request', [$request, true]);
         return $next($request);

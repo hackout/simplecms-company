@@ -26,9 +26,9 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @property-read ?Carbon $updated_at 更新时间
  * @property-read ?Company $company 公司
  * @property-read ?Collection<Media> $media 附件
- * @property-read ?array<array<string<"name","url","uuid">,string>> $files 辅助资料
- * @property-read ?array<string<"name","url","uuid">,string> $front 证件正面
- * @property-read ?array<string<"name","url","uuid">,string> $back 证件反面
+ * @property-read ?array<array<string,string>> $files 辅助资料
+ * @property-read ?array<string,string> $front 证件正面
+ * @property-read ?array<string,string> $back 证件反面
  */
 class CompanyProfile extends Model implements SimpleMedia
 {

@@ -49,7 +49,7 @@ class CompanyAuthenticatable
      * @param string $password
      * @param array $messages
      * @throws \SimpleCMS\Framework\Exceptions\SimpleException
-     * @return array
+     * @return array|RedirectResponse
      */
     public function guardLogin(string $guard, string $account, string $password, array $messages = []): bool|RedirectResponse
     {
@@ -74,6 +74,11 @@ class CompanyAuthenticatable
         return true;
     }
 
+    /**
+     * 获取账号基础信息
+     * @param \SimpleCMS\Company\Models\CompanyAccount $account
+     * @return array
+     */
     public function getAccount(CompanyAccount $account): array
     {
         return [

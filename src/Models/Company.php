@@ -36,7 +36,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @property-read ?CompanyProfile $profile 子项
  * @property-read ?CompanyApply $apply 子项
  * @property-read ?Collection<Media> $media 附件
- * @property-read ?array<string<"name","url","uuid">,string> $logo Logo
+ * @property-read ?array<string,string> $logo Logo
  */
 class Company extends Model implements SimpleMedia
 {

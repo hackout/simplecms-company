@@ -36,7 +36,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property-read ?Collection<CompanyLog> $logs 请求日志
  * @property-read ?Company $company 企业
  * @property-read ?Collection<Media> $media 附件
- * @property-read ?array<string<"name","url","uuid">,string> $avatar 头像
+ * @property-read ?array<string,string> $avatar 头像
  */
 class CompanyAccount extends Authenticatable implements SimpleMedia
 {

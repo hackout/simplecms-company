@@ -5,7 +5,7 @@ class CompanyUtil
 {
     /**
      * 生成UID
-     * @return class-string
+     * @return string<class-string>
      */
     public static function makeNewUid(string $model): string
     {

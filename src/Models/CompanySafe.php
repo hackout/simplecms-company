@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  *
  * @property string $id 主键
  * @property string $company_account_id 账号ID
- * @property string<'mobile','email'> $type 类型
+ * @property string $type 类型
  * @property string $account 登录账号
  * @property ?string $code 名称
  * @property bool $is_verified 权限
