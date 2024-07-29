@@ -36,6 +36,14 @@ use \SimpleCMS\Company\Traits\CompanyTrait;
 class Product extends CompanyAbstract
 {
     use CompanyTrait;
+
+    //不设置companyRelations时默认 Product的camel复数形态，对应键company_id
+    public static function companyRelations(){
+        return [
+            'products' => 'company_id', //为Company绑定一个products的hasMany下级关系，对应键为company_id 
+            'inventories' => 'supplier_id' // 为Company绑定一个inventories的hasMany下级关系，对应键为supplier_id
+        ];
+    }
 }
 ```
 

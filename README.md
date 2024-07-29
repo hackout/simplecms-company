@@ -33,6 +33,14 @@ use \SimpleCMS\Company\Traits\CompanyTrait;
 class Product extends CompanyAbstract
 {
     use CompanyTrait;
+
+    //If companyRelations is not set, the default plural form of Product's camel is used, corresponding key is company_id
+    public static function companyRelations(){
+        return [
+            'products' => 'company_id', //Bind a hasMany relationship 'products' to Company, corresponding key is company_id
+            'inventories' => 'supplier_id' // Bind a hasMany relationship 'inventories' to Company, corresponding key is supplier_id 
+        ];
+    }
 }
 ```
 

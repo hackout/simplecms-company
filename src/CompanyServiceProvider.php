@@ -72,13 +72,27 @@ class CompanyServiceProvider extends ServiceProvider
 
             // 检查模型是否继承了 CompanyAbstract
             if (is_subclass_of($modelClass, CompanyAbstract::class)) {
-                $relationName = Str::plural(Str::camel(class_basename($modelClass)));
+                $this->relationUsing($modelClass);
+            }
+        }
+    }
 
-                // 动态添加 hasMany 关系
-                Company::resolveRelationUsing($relationName, function (Company $company) use ($modelClass) {
-                    return $company->hasMany($modelClass);
+    private function relationUsing(mixed $modelClass):void
+    {
+        if(method_exists($modelClass,'companyRelations'))
+        {
+            foreach($modelClass::companyRelations() as $relationName => $key)
+            {
+                Company::resolveRelationUsing($relationName, function (Company $company) use ($modelClass,$key) {
+                    return $company->hasMany($modelClass,$key);
                 });
             }
+        }else{
+            $relationName = Str::plural(Str::camel(class_basename($modelClass)));
+
+            Company::resolveRelationUsing($relationName, function (Company $company) use ($modelClass) {
+                return $company->hasMany($modelClass);
+            });
         }
     }
 
