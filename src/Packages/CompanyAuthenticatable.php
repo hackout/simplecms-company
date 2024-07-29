@@ -49,7 +49,7 @@ class CompanyAuthenticatable
      * @param string $password
      * @param array $messages
      * @throws \SimpleCMS\Framework\Exceptions\SimpleException
-     * @return array|RedirectResponse
+     * @return bool|RedirectResponse
      */
     public function guardLogin(string $guard, string $account, string $password, array $messages = []): bool|RedirectResponse
     {
