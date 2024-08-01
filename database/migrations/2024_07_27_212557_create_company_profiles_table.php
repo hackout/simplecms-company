@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('company_profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignUuid('company_id')->constrained('companies')->comment("企业ID");
+            $table->foreignUuid('company_id')->comment("企业ID");
             $table->string("id_number")->comment("企业注册号/身份证号码");
             $table->string("name")->comment("企业名称");
             $table->string("legal")->comment("法人/注册人");

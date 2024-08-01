@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('company_accounts', function (Blueprint $table) {
             $table->uuid('id')->primary()->comment("主键");
-            $table->foreignUuid('company_id')->constrained('companies')->nullable()->comment("公司ID");
+            $table->foreignUuid('company_id')->nullable()->comment("公司ID");
             $table->string("account")->unique()->comment("登录账号");
             $table->string("uid")->unique()->comment("UID");
             $table->string('password')->comment('登录密码');

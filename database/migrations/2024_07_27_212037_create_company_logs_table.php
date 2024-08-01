@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('company_logs', function (Blueprint $table) {
             $table->id()->comment("主键");
-            $table->foreignUuid("company_id")->constrained('companies')->nullable()->comment("公司ID");
+            $table->foreignUuid("company_id")->nullable()->comment("公司ID");
             $table->foreignUuid("company_account_id")->nullable()->comment("账号ID");
             $table->ipAddress()->comment("访问IP");
             $table->string("name")->nullable()->comment("操作说明");

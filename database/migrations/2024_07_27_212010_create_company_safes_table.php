@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('company_safes', function (Blueprint $table) {
             $table->id('id')->comment("主键");
-            $table->foreignUuid('company_account_id')->constrained('company_accounts')->nullable()->comment("账号ID");
+            $table->foreignUuid('company_account_id')->nullable()->comment("账号ID");
             $table->enum('type', ['mobile', 'email'])->default('mobile')->comment("密保类型");
             $table->string("account")->unique()->comment("登录账号");
             $table->string('code')->nullable()->comment("验证码");
